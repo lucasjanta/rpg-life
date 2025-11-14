@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvr7o0xxy3kcm"]
+[gd_scene load_steps=9 format=3 uid="uid://cvr7o0xxy3kcm"]
 
 [ext_resource type="Texture2D" uid="uid://bewno88f1k2po" path="res://assets/icons/weedometer_normal_eyes.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://cdmmuhddxxogv" path="res://scenes/main_menu.gd" id="1_wu84c"]
 [ext_resource type="Texture2D" uid="uid://v4q0j1gbf82f" path="res://assets/icons/food_normal.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://confoh5d2ryie" path="res://assets/icons/gamedevjob.png" id="2_oa1go"]
 [ext_resource type="Texture2D" uid="uid://cq6sfr6c2xt2s" path="res://assets/icons/house.png" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://iqdncnqjqn6p" path="res://assets/icons/muay.png" id="3_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://bt6qrumhn0hj0" path="res://assets/icons/profile.png" id="5_8ln24"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6cm7"]
 
@@ -74,6 +77,32 @@ horizontal_alignment = 1
 layout_mode = 2
 alignment = 2
 
+[node name="JobButton" type="Button" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6cm7")
+text = "game dev"
+icon = ExtResource("2_oa1go")
+flat = true
+text_overrun_behavior = 2
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="MuayButton" type="Button" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6cm7")
+text = "muay thai"
+icon = ExtResource("3_tbmy8")
+flat = true
+text_overrun_behavior = 2
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
 [node name="WeedometerButton" type="Button" parent="HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -112,3 +141,19 @@ text_overrun_behavior = 2
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
+
+[node name="profileButton" type="Button" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6cm7")
+text = "profile"
+icon = ExtResource("5_8ln24")
+flat = true
+text_overrun_behavior = 2
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/WeedometerButton" to="." method="_on_weedometer_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/FoodButton" to="." method="_on_food_button_pressed"]

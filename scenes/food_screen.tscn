@@ -1,0 +1,184 @@
+[gd_scene load_steps=29 format=3 uid="uid://doiqckw1bluox"]
+
+[ext_resource type="Script" uid="uid://d1grc6ait7hc4" path="res://scenes/food_screen.gd" id="1_p623y"]
+[ext_resource type="Texture2D" uid="uid://cudxvvljkdlhs" path="res://assets/food_system/bg.png" id="1_tmfvy"]
+[ext_resource type="Texture2D" uid="uid://bbxi806y7qtem" path="res://assets/food_system/table.png" id="2_p623y"]
+[ext_resource type="Texture2D" uid="uid://dysw4i2h4htyk" path="res://assets/food_system/fridge.png" id="3_sl32x"]
+[ext_resource type="Texture2D" uid="uid://cv76e0fmb2oc8" path="res://assets/food_system/paper.png" id="4_mfk03"]
+[ext_resource type="Texture2D" uid="uid://pgt6r2nl0iyu" path="res://assets/food_system/scale.png" id="5_ksaw1"]
+[ext_resource type="Texture2D" uid="uid://cncka4d8556hp" path="res://assets/food_system/shelf.png" id="6_llix8"]
+[ext_resource type="Texture2D" uid="uid://dwj6by0k53ejw" path="res://assets/food_system/recipe book.png" id="7_f8bpe"]
+[ext_resource type="PackedScene" uid="uid://bn2bdkj1y0m42" path="res://scenes/fridge_module.tscn" id="9_mfk03"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dvx0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_sl32x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tmfvy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p623y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sl32x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mfk03"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ksaw1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_llix8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f8bpe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvx0s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ba0xt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ksaw1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ba0xt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xxwis"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_av8q1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vqbh4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xxwis"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_f8bpe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_myb36"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0vpfb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vey7p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rcdb4"]
+
+[node name="FoodScreen" type="Node2D"]
+script = ExtResource("1_p623y")
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(91.50001, 160.4306)
+scale = Vector2(0.33518514, 0.33518535)
+texture = ExtResource("1_tmfvy")
+
+[node name="table" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="table"]
+position = Vector2(32.75, 174.62502)
+scale = Vector2(0.4479166, 0.44791657)
+texture = ExtResource("2_p623y")
+
+[node name="fridge" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fridge"]
+position = Vector2(107, 137.72)
+scale = Vector2(0.34000003, 0.34000006)
+sprite_frames = SubResource("SpriteFrames_dvx0s")
+animation = &"idle"
+
+[node name="FridgeButton" type="Button" parent="fridge"]
+offset_left = 64.0
+offset_top = 37.0
+offset_right = 150.0
+offset_bottom = 238.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tmfvy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p623y")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sl32x")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mfk03")
+
+[node name="grocery_list" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="grocery_list"]
+position = Vector2(123.5, 111.000015)
+scale = Vector2(0.3222223, 0.3222223)
+texture = ExtResource("4_mfk03")
+
+[node name="GroceryButton" type="Button" parent="grocery_list"]
+offset_left = 109.0
+offset_top = 91.0
+offset_right = 138.0
+offset_bottom = 131.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ksaw1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_llix8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f8bpe")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dvx0s")
+
+[node name="scale" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="scale"]
+position = Vector2(33, 128.47282)
+scale = Vector2(0.48913044, 0.4891304)
+sprite_frames = SubResource("SpriteFrames_ba0xt")
+
+[node name="ScaleButton" type="Button" parent="scale"]
+offset_left = 15.999998
+offset_top = 116.0
+offset_right = 40.41607
+offset_bottom = 150.63326
+rotation = -0.3281219
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ba0xt")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xxwis")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_av8q1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vqbh4")
+
+[node name="shelf" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="shelf"]
+position = Vector2(146.375, 280.00003)
+scale = Vector2(0.3480861, 0.34808612)
+texture = ExtResource("6_llix8")
+
+[node name="recipe_book" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="recipe_book"]
+position = Vector2(150.00002, 279.00003)
+scale = Vector2(0.4268292, 0.42682925)
+sprite_frames = SubResource("SpriteFrames_xxwis")
+
+[node name="Button" type="Button" parent="recipe_book"]
+offset_left = 123.0
+offset_top = 247.0
+offset_right = 176.0
+offset_bottom = 311.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_myb36")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0vpfb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vey7p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rcdb4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FridgeModule" parent="CanvasLayer" instance=ExtResource("9_mfk03")]
+
+[node name="RecipesModule" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScaleModule" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

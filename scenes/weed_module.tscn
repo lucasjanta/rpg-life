@@ -1,0 +1,715 @@
+[gd_scene load_steps=12 format=3 uid="uid://rkg4ws332gwb"]
+
+[ext_resource type="Script" uid="uid://ucydqyagkovg" path="res://scenes/weed_module.gd" id="1_g5t6g"]
+[ext_resource type="FontFile" uid="uid://dabhmpqi7excd" path="res://assets/fonts/dealerplate california.otf" id="1_m2lvx"]
+[ext_resource type="Texture2D" uid="uid://b7phrvmpc1are" path="res://assets/ui/weed_bar/under.png" id="2_kg34p"]
+[ext_resource type="Script" uid="uid://by175s425y81b" path="res://scenes/focus_panel.gd" id="2_puuj8"]
+[ext_resource type="Texture2D" uid="uid://dgln5tof338jg" path="res://assets/ui/weed_bar/over.png" id="3_6w18u"]
+[ext_resource type="Texture2D" uid="uid://begv7xiypfpkn" path="res://assets/ui/weed_bar/progress.png" id="4_fns1u"]
+[ext_resource type="Texture2D" uid="uid://du3p08f1t7qrb" path="res://assets/ui/weed_pet/sober.png" id="5_6w18u"]
+[ext_resource type="Script" uid="uid://bec7tj0aq3l0a" path="res://scenes/weed_panel.gd" id="6_1xq2g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6w18u"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 0.29411766)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fns1u"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.40784314, 0, 0.1254902, 0.7019608)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5t6g"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="weed_module" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g5t6g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Weed&Timer" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(160, 120)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Weed&Timer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="FocusPanel" type="PanelContainer" parent="VBoxContainer/Weed&Timer/MarginContainer"]
+layout_mode = 2
+script = ExtResource("2_puuj8")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 10
+text = "Selected Quest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuestLabel" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(166, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 6
+text = "------------"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Control2" type="Control" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="stopwatch" type="VBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TimerLabel" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/stopwatch"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 20
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/stopwatch"]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/stopwatch/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 12
+text = "Play"
+
+[node name="PauseButton" type="Button" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/stopwatch/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 12
+text = "Pause"
+
+[node name="StopButton" type="Button" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/stopwatch/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 12
+text = "Stop"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PuffTimerLabel" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+text = "30:00"
+
+[node name="Control2" type="Control" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PuffProgressBar" type="TextureProgressBar" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_under = ExtResource("2_kg34p")
+texture_over = ExtResource("3_6w18u")
+texture_progress = ExtResource("4_fns1u")
+
+[node name="Control4" type="Control" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AvailablePuffs" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+text = "0 Puffs"
+
+[node name="Control3" type="Control" parent="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WeedPanel" type="PanelContainer" parent="VBoxContainer/Weed&Timer/MarginContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("6_1xq2g")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="WeedometerLabel" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 10
+text = "Weedometer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 10
+text = "Puffs:"
+
+[node name="PuffsCount" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 10
+text = "10"
+
+[node name="WeedPetTexture" type="TextureRect" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_6w18u")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PuffButton" type="Button" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+text = "PUFF"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 6
+text = "Today"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 6
+text = "High Bar"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HighProgressBar" type="ProgressBar" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/background = SubResource("StyleBoxFlat_6w18u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fns1u")
+
+[node name="StateContainer" type="PanelContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+self_modulate = Color(0, 0.5882353, 0, 1)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g5t6g")
+
+[node name="StateLabel" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/StateContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 4
+text = "Sober"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 0
+
+[node name="DaySessionsContainer" type="HBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+text = "Past 7 days"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "10/11"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PuffQtd" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "puffs"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "10/11"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PuffQtd" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "puffs"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer3"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer3/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "10/11"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PuffQtd" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "puffs"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer4" type="PanelContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer4"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer4/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "10/11"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PuffQtd" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "puffs"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer5" type="PanelContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer5"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer5/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer5/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "10/11"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PuffQtd" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer5/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer5/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "puffs"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer6" type="PanelContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer6"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer6/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer6/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "10/11"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PuffQtd" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer6/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer6/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "puffs"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer7" type="PanelContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer7"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer7/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer7/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "10/11"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PuffQtd" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer7/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer7/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 3
+text = "puffs"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/Weed&Timer/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="FocusButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 12
+text = "Focus"
+
+[node name="WeedButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 12
+text = "Weed"
+
+[node name="QuestsContainer" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/QuestsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/QuestsContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/QuestsContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+text = "Quests"
+horizontal_alignment = 1
+
+[node name="Quests" type="VBoxContainer" parent="VBoxContainer/QuestsContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/QuestsContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/QuestsContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+text = "+"
+
+[node name="BackButton" type="Button" parent="."]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -19.0
+offset_right = 32.0
+offset_bottom = -2.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/stopwatch/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/stopwatch/HBoxContainer/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/stopwatch/HBoxContainer/StopButton" to="." method="_on_stop_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/PuffButton" to="VBoxContainer/Weed&Timer/MarginContainer/WeedPanel" method="_on_puff_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/FocusButton" to="." method="_on_focus_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/WeedButton" to="." method="_on_weed_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
