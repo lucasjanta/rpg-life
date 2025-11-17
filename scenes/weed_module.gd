@@ -13,8 +13,8 @@ extends Control
 @onready var weed_panel = $"VBoxContainer/Weed&Timer/MarginContainer/WeedPanel"
 
 var total_time := 0.0
-var session_time := 10.0 # 30 minutos
-var current_session_time := 10.0
+var session_time := 30.0 * 60.0 # 30 minutos
+var current_session_time := 30.0 * 60.0
 
 var is_running := false
 var is_paused := false

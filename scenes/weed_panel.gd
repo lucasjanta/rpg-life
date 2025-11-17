@@ -11,8 +11,8 @@ extends PanelContainer
 const WEED_ICON = preload("uid://jtrsog0m6qfs")
 
 # --- Configurações ---
-const FILL_DURATION := 10.0 # 5 * 60.0 # 5 minutos
-const DRAIN_DURATION := 20.0 # 2 * 60 * 60.0 # 2 horas
+const FILL_DURATION := 5.0 * 60.0 # 5 * 60.0 # 5 minutos
+const DRAIN_DURATION := 120.0 * 60.0 # 2 * 60 * 60.0 # 2 horas
 
 # --- Estado ---
 var is_high := false

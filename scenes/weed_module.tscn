@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://rkg4ws332gwb"]
+[gd_scene load_steps=13 format=3 uid="uid://rkg4ws332gwb"]
 
 [ext_resource type="Script" uid="uid://ucydqyagkovg" path="res://scenes/weed_module.gd" id="1_g5t6g"]
 [ext_resource type="FontFile" uid="uid://dabhmpqi7excd" path="res://assets/fonts/dealerplate california.otf" id="1_m2lvx"]
@@ -53,6 +53,8 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_1xq2g"]
 
 [node name="weed_module" type="Control"]
 layout_mode = 3
@@ -705,6 +707,237 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_m2lvx")
 theme_override_font_sizes/font_size = 8
 text = "Back"
+
+[node name="NewQuest" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="NewQuest"]
+custom_minimum_size = Vector2(160, 240)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="NewQuest/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NewQuest/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/Header"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 12
+text = "New Quest"
+
+[node name="Control" type="Control" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/Header"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 12
+text = "X"
+
+[node name="InputsContainer" type="VBoxContainer" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NameContainer" type="VBoxContainer" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/NameContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+text = "Title"
+
+[node name="TextEdit" type="TextEdit" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/NameContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+text = "asdasdasdas"
+
+[node name="DescriptionContainer" type="VBoxContainer" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer"]
+layout_mode = 2
+
+[node name="DescLabel" type="Label" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/DescriptionContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+text = "Description"
+
+[node name="TextEdit" type="TextEdit" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/DescriptionContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+text = "asdasdasdas"
+
+[node name="AreaContainer" type="VBoxContainer" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer"]
+layout_mode = 2
+
+[node name="AreaLabel" type="Label" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/AreaContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+text = "Area"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/AreaContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/AreaContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="GamedevButton" type="Button" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/AreaContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+toggle_mode = true
+button_group = SubResource("ButtonGroup_1xq2g")
+text = "Game Dev"
+
+[node name="ReadingButton" type="Button" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/AreaContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+toggle_mode = true
+button_group = SubResource("ButtonGroup_1xq2g")
+text = "Reading"
+
+[node name="MuayButton" type="Button" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/AreaContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+toggle_mode = true
+button_group = SubResource("ButtonGroup_1xq2g")
+text = "Muay Thai"
+
+[node name="MusicButton" type="Button" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/AreaContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+toggle_mode = true
+button_group = SubResource("ButtonGroup_1xq2g")
+text = "Music"
+
+[node name="HouseButton" type="Button" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/AreaContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+toggle_mode = true
+button_group = SubResource("ButtonGroup_1xq2g")
+text = "House"
+
+[node name="Content Creation" type="Button" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/AreaContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+toggle_mode = true
+button_group = SubResource("ButtonGroup_1xq2g")
+text = "Content Creation"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer"]
+layout_mode = 2
+
+[node name="RewardLabel" type="Label" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 8
+text = "Rewards"
+
+[node name="MinutesReward" type="HBoxContainer" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/VBoxContainer/MinutesReward"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 12
+text = "For every"
+
+[node name="MinutesInput" type="LineEdit" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/VBoxContainer/MinutesReward"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 12
+text = "0"
+alignment = 1
+max_length = 2
+virtual_keyboard_type = 2
+
+[node name="Label2" type="Label" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/VBoxContainer/MinutesReward"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 12
+text = "minutes, 1 puff"
+
+[node name="FinishReward" type="HBoxContainer" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/VBoxContainer/FinishReward"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 12
+text = "On finish:"
+
+[node name="FinishPuffsInput" type="LineEdit" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/VBoxContainer/FinishReward"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 12
+text = "0"
+alignment = 1
+max_length = 2
+virtual_keyboard_type = 2
+
+[node name="Label2" type="Label" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/InputsContainer/VBoxContainer/FinishReward"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 12
+text = "puffs"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="SaveButton" type="Button" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 12
+text = "Save"
+
+[node name="CancelButton" type="Button" parent="NewQuest/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2lvx")
+theme_override_font_sizes/font_size = 12
+text = "Cancel"
 
 [connection signal="pressed" from="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/stopwatch/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Weed&Timer/MarginContainer/FocusPanel/MarginContainer/VBoxContainer/stopwatch/HBoxContainer/PauseButton" to="." method="_on_pause_button_pressed"]
